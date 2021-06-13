@@ -1,0 +1,17 @@
+img{
+    height: 300px;
+    width: 300px;
+}
+
+.myStoresDiv{
+    height: 500px;
+    width: 350px;
+    float: left;
+    margin: 50px 60px 60px 30px;
+    overflow: hidden;
+}
+
+
+.myStoresDiv:hover{
+    opacity: 0.5;
+}

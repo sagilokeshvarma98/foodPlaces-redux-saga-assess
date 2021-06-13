@@ -6,11 +6,28 @@ import reportWebVitals from './reportWebVitals';
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import '../node_modules/bootstrap/dist/js/bootstrap'
 import '../node_modules/jquery/dist/jquery'
+import {appstate} from './redux/store'
+
+import { createStore,applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import {RootSaga} from './redux/saga/rootSaga'
+import createSagaMiddleware from 'redux-saga';
+
+const sagaMiddleware = createSagaMiddleware();
+
+const mystore=createStore(appstate,applyMiddleware(sagaMiddleware))
+
+sagaMiddleware.run(RootSaga);
+
+mystore.dispatch({type:"GET_CITIES"})
+
+
 
 ReactDOM.render(
-  <React.StrictMode>
+  
+  <Provider store ={mystore}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
