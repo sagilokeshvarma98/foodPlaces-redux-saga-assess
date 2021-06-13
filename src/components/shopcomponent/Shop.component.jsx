@@ -13,7 +13,7 @@ class Shop extends React.Component{
     return(
         <div id='selectDiv'>
             <select className="form-select" onChange={this.props.getCityStores}>
-                <option>Select</option>
+                <option value={null}>Select</option>
                {optionsData}
             </select>
         </div>

@@ -25,13 +25,13 @@ export function* getCityData(data){
         yield put({type:"GET_CONTENT",stores:response.data});
     }
     catch(error){
-        console.log(error.message);
+        yield put({type:"GET_CONTENT",stores:[]});
     }
 }
 
 
 export function* getStoreData(data){
-    yield console.log(data.payload);
+    yield console.log(data.p);
     return {type:"GET_STORE",place:data.payload}
 }
 

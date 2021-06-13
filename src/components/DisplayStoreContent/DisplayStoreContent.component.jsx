@@ -10,13 +10,15 @@ const DisplayStoreContent =({title,imageUrl,id,LowPrice,HighPrice,history,match}
             LowPrice,
             HighPrice
         })
-        console.log(history);
     }
         return(
-            <div onClick={onSelect}> 
-            <h2>{title}</h2>
-                <img src={imageUrl}  alt="" />
-            </div>
+             <section  className="myStoresDiv" onClick={onSelect}>
+                                    <img src={imageUrl} alt={title} />
+                                    <div className='contentDiv'>
+                                        <h2 className='text text-danger'>{title}</h2>
+                                        <h6 className='m-3 text text-dark'>Prices : <b>{LowPrice}-{HighPrice}</b></h6>
+                                    </div>
+                                </section>
         )
 }
 
