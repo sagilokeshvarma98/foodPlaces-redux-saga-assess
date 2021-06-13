@@ -6,7 +6,15 @@ export const FoodStores = ({cityFoodStores,getStoreData,history,match})=>{
     let city = cityFoodStores.city
    if(cityFoodStores.length===0){
     return(
-        <h4 className='text text-primary m-5'>Please select a city to get food stores</h4>
+        <div className='FoodStores'>
+            <div className='citiesImageDiv'>
+                <img src={'Hyderabad.jpg'} alt=''/>
+                <img src={'Mumbai.jpg'} alt=''/>
+                <img src={'Goa.png'} alt=''/>
+                <img src={'Coorg.png'} alt=''/>
+                <img src={'Chennai.png'} alt=''/>
+            </div>
+        </div>
     )
    }
    else{
