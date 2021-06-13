@@ -4,6 +4,9 @@ export const GetCities = (state={people:[]},action)=>{
     if(action.type === citiesAction.GET_CITY_DETAILS){
         return {people : action.cities}
     }
+    else if(action.type === 'GET_CITIES_ERR'){
+        return {people : false}
+    }
     else{
         return state
     }

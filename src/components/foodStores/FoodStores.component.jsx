@@ -6,7 +6,7 @@ export const FoodStores = ({cityFoodStores,getStoreData,history,match})=>{
     let city = cityFoodStores.city
    if(cityFoodStores.length===0){
     return(
-        <h1>Please select a city to get food stores</h1>
+        <h4 className='text text-primary m-5'>Please select a city to get food stores</h4>
     )
    }
    else{
@@ -27,6 +27,7 @@ export const FoodStores = ({cityFoodStores,getStoreData,history,match})=>{
        })
     return(
         <div>
+            <h3 className='text text-primary'>{city} Food Stores</h3>
             {storeData}
         </div>
     )

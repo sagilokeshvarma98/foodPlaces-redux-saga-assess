@@ -13,7 +13,7 @@ export function* getCities(){
         yield put({type:citiesAction.GET_CITY_DETAILS,cities:response.data});
     }
     catch(error){
-        console.log(error.message);
+        yield put({type:"GET_CITIES_ERR",cities:[]});
     }
 }
 
