@@ -18,12 +18,5 @@ export const GetCityDetails = (state={store:[]},action)=>{
     }
 }
 
-export const getStoreData = (state={store:[]},action)=>{
-    console.log(state,action);
-    if(action.type === "GET_STORE"){
-        return console.log(action.place);
-    } 
-    else{
-        return state
-    }
-}
+
+

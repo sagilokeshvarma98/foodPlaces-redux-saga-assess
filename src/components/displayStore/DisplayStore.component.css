@@ -1,0 +1,9 @@
+.storeDiv img{
+    float: left;
+    height: 500px;
+    width: 500px;
+}
+
+.storeContent{
+    text-align: center;
+}

@@ -30,8 +30,3 @@ export function* getCityData(data){
 }
 
 
-export function* getStoreData(data){
-    yield console.log(data.p);
-    return {type:"GET_STORE",place:data.payload}
-}
-

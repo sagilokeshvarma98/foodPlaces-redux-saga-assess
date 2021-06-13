@@ -1,9 +1,8 @@
-// import brand from '../../assets/brand.png'
 import {BrowserRouter as Router,Link,Route} from 'react-router-dom'
 import HomePage from '../../pages/homepage/HomePage.component'
 import Contact from '../../pages/contact/ContactPage.component'
 import About from '../../pages/about/AboutPage.component'
-import { DisplayStore } from '../displayStore/DisplayStore.component'
+import DisplayStore from '../displayStore/DisplayStore.component'
 
 
 const Header = ()=>{

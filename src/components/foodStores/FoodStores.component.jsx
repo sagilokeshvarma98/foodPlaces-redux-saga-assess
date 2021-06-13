@@ -1,23 +1,21 @@
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { getStoreData } from "../../redux/actions/getCityStores";
 import './FoodStores.component.css'
 import {withRouter} from 'react-router-dom'
 
 export const FoodStores = ({cityFoodStores,getStoreData,history,match})=>{
- 
+    let city = cityFoodStores.city
    if(cityFoodStores.length===0){
     return(
         <h1>Please select a city to get food stores</h1>
     )
    }
    else{
-       let storeData = cityFoodStores.foodPlaces.map(x=>{
+       let storeData = cityFoodStores.foodPlaces.map((x)=>{
            return <section key={x.id} className="myStoresDiv" onClick={()=>{
             history.push(`${match.url}${x.title}`,{
-              x
+              x,
+              city
             })
-            console.log(x,history.location,match);
         }
            }>
                         <img src={process.env.PUBLIC_URL + `/${x.imageUrl}`} alt={x.title} />
@@ -40,11 +38,8 @@ const getStores = (store)=>{
     return {cityFoodStores:store.getCityStores.store}
 }
 
-const mapActiontoProps = (dispatch) =>{
-    return bindActionCreators({getStoreData:getStoreData},dispatch)
-}
 
-export default connect(getStores,mapActiontoProps)(withRouter(FoodStores))
+export default connect(getStores,null)(withRouter(FoodStores))
 
 
 
