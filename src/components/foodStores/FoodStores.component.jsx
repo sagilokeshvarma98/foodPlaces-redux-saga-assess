@@ -27,7 +27,7 @@ export const FoodStores = ({cityFoodStores,getStoreData,history,match})=>{
             })
         }
            }>
-                        <img src={process.env.PUBLIC_URL + `/${x.imageUrl}`} alt={x.title} />
+                        <img src={x.imageUrl} alt={x.title} />
                         <div className='contentDiv'>
                             <h2 className='text text-danger'>{x.title}</h2>
                             <h6 className='m-3 text text-dark'>Prices : <b>{x.LowPrice}-{x.HighPrice}</b></h6>
