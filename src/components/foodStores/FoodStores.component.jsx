@@ -7,6 +7,7 @@ export const FoodStores = ({cityFoodStores,getStoreData,history,match})=>{
    if(cityFoodStores.length===0){
     return(
         <div className='FoodStores'>
+            <h5 className='text text-success'>We are available in the below cities</h5>
             <div className='citiesImageDiv'>
                 <img src={'Hyderabad.jpg'} alt=''/>
                 <img src={'Mumbai.jpg'} alt=''/>

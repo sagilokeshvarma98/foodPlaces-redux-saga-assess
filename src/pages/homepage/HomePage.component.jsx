@@ -1,12 +1,13 @@
 import React from 'react'
 import MainData from '../../components/MainData/MainData.component'
-import {BrowserRouter as Router,Link,Route,Switch} from 'react-router-dom'
+import {BrowserRouter as Router,Link,Route,Switch,Redirect} from 'react-router-dom'
 import Contact from '../contact/ContactPage.component'
 import About from '../about/AboutPage.component'
-import { NoPageFound } from '../nopagefound/NoPageFound.component'
 import DisplayStore from '../../components/displayStore/DisplayStore.component'
+import SignIn from '../../components/signIn/Signin.component'
 
 const HomePage = ()=>{
+    let signinkey = sessionStorage.getItem('signKey')
     return(
         <Router>
         <div className='navBarDiv'>
@@ -21,15 +22,20 @@ const HomePage = ()=>{
                         <li className="nav-item active">
                            <Link className="nav-link" to='/contact'>Contact</Link>
                         </li>
+                        {/* <li className="nav-item active">
+                           <Link className="nav-link" to='/signin'>SignIn</Link>
+                        </li> */}
                     </ul>
             </nav>
         </div>
         <Switch>
         <Route exact path='/' component={MainData}/>
         <Route path='/contact' component={Contact}/>
-        <Route path='/about' component={About}/>
-        <Route path="/:id" component={DisplayStore} />
-        <Route component={NoPageFound} />
+        {/* <Route exact path="/signin">
+            {signinkey!==null ? <Redirect to="/" /> : <SignIn/>}
+        </Route> */}
+        <Route path='/about' component={About}/>      
+         <Route path="/:id" component={DisplayStore} />
         </Switch>
     </Router> 
     )

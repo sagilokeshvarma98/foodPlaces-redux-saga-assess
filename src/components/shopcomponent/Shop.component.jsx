@@ -21,7 +21,7 @@ class Shop extends React.Component{
     })
     return(
         <div id='selectDiv'>
-            <select className="form-select text text-info m-5" onChange={this.props.getCityStores}>
+           <select className="form-select text text-info m-5" onChange={this.props.getCityStores}>
                 <option value={null}>Select a city</option>
                {optionsData}
             </select>
