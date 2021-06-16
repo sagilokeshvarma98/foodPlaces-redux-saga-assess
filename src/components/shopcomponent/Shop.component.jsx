@@ -4,7 +4,6 @@ import { bindActionCreators } from 'redux'
 import { getCityStores } from '../../redux/actions/getCityStores'
 import './Shop.component.css'
 class Shop extends React.Component{ 
-
    render(){
        console.log(this.props.people);
     if(this.props.people === false){
